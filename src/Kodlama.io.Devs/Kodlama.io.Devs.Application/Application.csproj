@@ -10,11 +10,20 @@
 		<ProjectReference Include="..\..\corePackages\Core.Application\Core.Application.csproj" />
 		<ProjectReference Include="..\..\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
 		<ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
-		<ProjectReference Include="..\Kodlama.io.Devs.Domain\Kodlama.io.Devs.Domain.csproj" />
+		<ProjectReference Include="..\Kodlama.io.Devs.Domain\Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Features\Auths\Models\" />
+		<Folder Include="Features\Auths\Queries\" />
+		<Folder Include="Features\Auths\Constants\" />
+		<Folder Include="Features\GithubProfiles\Constants\" />
+		<Folder Include="Features\OperationClaims\Constants\" />
 		<Folder Include="Features\ProgrammingLanguages\Constants\" />
+		<Folder Include="Features\Technologies\Constants\" />
+		<Folder Include="Features\UserOperationClaims\Constants\" />
+		<Folder Include="Features\UserOperationClaims\Models\" />
+		<Folder Include="Features\UserOperationClaims\Rules\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -31,9 +31,9 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Del
             {
                 ProgrammingLanguage? programmingLanguage = await _programmingLanguageRepository.GetAsync(p => p.Id == request.Id);
 
-                _programmingLanguageBusinessRules.ProgrammingLanguageShouldExistWhenRequested(programmingLanguage);
+                _programmingLanguageBusinessRules.ProgrammingLanguageShouldExistWhenRequested(programmingLanguage!);
 
-                await _programmingLanguageRepository.DeleteAsync(programmingLanguage);
+                await _programmingLanguageRepository.DeleteAsync(programmingLanguage!);
 
                 return Unit.Value;
             }

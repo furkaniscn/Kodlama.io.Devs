@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
     public class ProgrammingLanguagesController : BaseController
     {
         [HttpGet]
-        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest )
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
             GetListProgrammingLanguageQuery getListProgrammingLanguageQuery = new() { PageRequest = pageRequest };
             ProgrammingLanguageListModel result = await Mediator.Send(getListProgrammingLanguageQuery);
@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("{Id}")]
-        public async Task<IActionResult> GetList([FromRoute] GetByIdProgrammingLanguageQuery getByIdProgrammingLanguageQuery)
+        public async Task<IActionResult> Get([FromRoute] GetByIdProgrammingLanguageQuery getByIdProgrammingLanguageQuery)
         {
             ProgrammingLanguageGetByIdDto result = await Mediator.Send(getByIdProgrammingLanguageQuery);
             return Ok(result);
@@ -39,14 +39,14 @@ namespace WebAPI.Controllers
             return Created("", result);
         }
 
-        [HttpPut]
+        [HttpPost("update")]
         public async Task<IActionResult> Update([FromBody] UpdateProgrammingLanguageCommand updateProgrammingLanguageCommand)
         {
             UpdatedProgrammingLanguageDto result = await Mediator.Send(updateProgrammingLanguageCommand);
             return Ok(result);
         }
 
-        [HttpDelete("{Id}")]
+        [HttpPost("delete/{Id}")]
         public async Task<IActionResult> Delete([FromRoute] DeleteProgrammingLanguageCommand deleteProgrammingLanguageCommand)
         {
             await Mediator.Send(deleteProgrammingLanguageCommand);
